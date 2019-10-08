@@ -5,6 +5,7 @@ import com.airbnb.mvrx.withState
 import com.zirkler.mvrxepoxyformexample.arch_core.VLRecyclerViewBaseFragment
 import com.zirkler.mvrxepoxyformexample.arch_core.simpleController
 import com.zirkler.mvrxepoxyformexample.cells.VLTextInputCell
+import com.zirkler.mvrxepoxyformexample.cells.VLTextInputType
 import com.zirkler.mvrxepoxyformexample.cells.vLTextInputCell
 import com.zirkler.mvrxepoxyformexample.cells.vLTextLabelCell
 
@@ -17,7 +18,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
 
             vLTextLabelCell {
                 id("state_dump")
-                text("$state\n\n")
+                text("\n\n$state\n\n")
             }
 
             vLTextLabelCell {
@@ -27,7 +28,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("firstname")
                 placeholder("Firstname")
-                inputType(VLTextInputCell.VLTextInputType.TEXT)
+                inputType(VLTextInputType.TEXT)
                 textInput(state.firstname)
                 textChangeCallback { viewModel.setFirstname(it) }
             }
@@ -39,7 +40,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("lastname")
                 placeholder("Lastname")
-                inputType(VLTextInputCell.VLTextInputType.TEXT)
+                inputType(VLTextInputType.TEXT)
                 textInput(state.lastname)
                 textChangeCallback { viewModel.setLastname(it) }
             }
@@ -56,7 +57,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("company")
                 placeholder("Company:")
-                inputType(VLTextInputCell.VLTextInputType.TEXT)
+                inputType(VLTextInputType.TEXT)
                 textInput(state.company)
                 textChangeCallback { viewModel.setCompany(it) }
             }
@@ -68,7 +69,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("position")
                 placeholder("Position:")
-                inputType(VLTextInputCell.VLTextInputType.TEXT)
+                inputType(VLTextInputType.TEXT)
                 textInput(state.position)
                 textChangeCallback { viewModel.setPosition(it) }
             }
@@ -80,7 +81,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("email")
                 placeholder("Email:")
-                inputType(VLTextInputCell.VLTextInputType.EMAIL)
+                inputType(VLTextInputType.EMAIL)
                 textInput(state.email)
                 textChangeCallback { viewModel.setEmail(it) }
             }
@@ -92,7 +93,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("repeat_email")
                 placeholder("Email:")
-                inputType(VLTextInputCell.VLTextInputType.EMAIL)
+                inputType(VLTextInputType.EMAIL)
                 textInput(state.email2)
                 textChangeCallback { viewModel.setEmail2(it) }
             }
@@ -109,7 +110,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("password")
                 placeholder("Password")
-                inputType(VLTextInputCell.VLTextInputType.PW)
+                inputType(VLTextInputType.PW)
                 textInput(state.password)
                 textChangeCallback { viewModel.setPassword(it) }
             }
@@ -121,7 +122,7 @@ class DemoFormFragment: VLRecyclerViewBaseFragment() {
             vLTextInputCell {
                 id("repeat_password")
                 placeholder("Password:")
-                inputType(VLTextInputCell.VLTextInputType.PW)
+                inputType(VLTextInputType.PW)
                 textInput(state.password2)
                 textChangeCallback { viewModel.setPassword2(it) }
             }

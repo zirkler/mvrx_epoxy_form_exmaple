@@ -12,9 +12,12 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import com.zirkler.mvrxepoxyformexample.R
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.cell_text_input.view.*
-import java.util.concurrent.TimeUnit
 
 typealias VLTextChangeCallback = ((CharSequence?) -> Unit)
+
+enum class VLTextInputType {
+    PW, EMAIL, TEXT
+}
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
 class VLTextInputCell@JvmOverloads constructor(
@@ -47,14 +50,9 @@ class VLTextInputCell@JvmOverloads constructor(
         this.textChangeDisposable = this
             .editText
             .textChanges()
-            //.debounce(500, TimeUnit.MILLISECONDS)
             .subscribe {
                 _textchangeCallback?.invoke(it.toString())
             }
-    }
-
-    enum class VLTextInputType {
-        PW, EMAIL, TEXT
     }
 
     @TextProp

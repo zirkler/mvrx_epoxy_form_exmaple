@@ -23,7 +23,6 @@ abstract class VLRecyclerViewBaseFragment : BaseMvRxFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(
             R.layout.fragment_vl_recycler_view_base,
             container,
